@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NetIncome | Turn Your Screen Time Into Cash</title>
+<meta name="description" content="Simple, proven ways to earn real income online. No experience needed. Start earning from your phone or laptop today with affiliate marketing, ads, and more.">
+<meta name="keywords" content="earn money online, passive income, affiliate marketing, work from home, make money internet, online income South Africa">
+
+<!-- SEO / Open Graph -->
+<meta property="og:title" content="NetIncome | Turn Your Screen Time Into Cash">
+<meta property="og:description" content="Simple proven ways to earn real money online. Affiliate marketing, display ads, and more.">
+<meta property="og:type" content="website">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --surface: #141414;
+    --card: #1c1c1c;
+    --border: #2a2a2a;
+    --accent: #c8f000;
+    --accent2: #00e5c8;
+    --text: #f0f0f0;
+    --muted: #888;
+    --font-head: 'Syne', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.65;
+    overflow-x: hidden;
+  }
+
+  /* ── NOISE TEXTURE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 999;
+    opacity: 0.5;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6rem 2rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(200,240,0,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .badge {
+    display: inline-block;
+    background: rgba(200,240,0,0.12);
+    border: 1px solid rgba(200,240,0,0.3);
+    color: var(--accent);
+    font-family: var(--font-head);
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.9rem;
+    border-radius: 2px;
+    margin-bottom: 1.5rem;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  h1 {
+    font-family: var(--font-head);
+    font-size: clamp(3rem, 8vw, 7rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    max-width: 900px;
+    animation: fadeUp 0.7s 0.1s ease both;
+  }
+
+  h1 .accent { color: var(--accent); }
+  h1 .accent2 { color: var(--accent2); }
+
+  .hero-sub {
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+    color: var(--muted);
+    max-width: 560px;
+    font-weight: 300;
+    animation: fadeUp 0.7s 0.2s ease both;
+  }
+
+  .hero-cta {
+    margin-top: 2.5rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    animation: fadeUp 0.7s 0.3s ease both;
+  }
+
+  .btn {
+    display: inline-block;
+    font-family: var(--font-head);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 0.9rem 2rem;
+    border-radius: 3px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    border: none;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: #0a0a0a;
+  }
+  .btn-primary:hover { background: #d4ff00; transform: translateY(-2px); }
+
+  .btn-ghost {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text);
+  }
+  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* ── TICKER ── */
+  .ticker-wrap {
+    background: var(--accent);
+    overflow: hidden;
+    padding: 0.6rem 0;
+    white-space: nowrap;
+  }
+
+  .ticker {
+    display: inline-flex;
+    animation: ticker 18s linear infinite;
+  }
+
+  .ticker span {
+    font-family: var(--font-head);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: #0a0a0a;
+    padding: 0 2.5rem;
+  }
+
+  /* ── SECTION ── */
+  section { padding: 5rem 2rem; }
+
+  .container { max-width: 1100px; margin: 0 auto; }
+
+  .section-label {
+    font-family: var(--font-head);
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    font-family: var(--font-head);
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+  }
+
+  .section-intro {
+    color: var(--muted);
+    max-width: 540px;
+    font-weight: 300;
+    margin-bottom: 3rem;
+  }
+
+  /* ── METHODS GRID ── */
+  .methods-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5px;
+    background: var(--border);
+    border: 1.5px solid var(--border);
+  }
+
+  .method-card {
+    background: var(--card);
+    padding: 2rem;
+    transition: background 0.2s;
+    position: relative;
+  }
+
+  .method-card:hover { background: #222; }
+
+  .method-num {
+    font-family: var(--font-head);
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    margin-bottom: 0.75rem;
+  }
+
+  .method-card h3 {
+    font-family: var(--font-head);
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--accent);
+  }
+
+  .method-card p {
+    font-size: 0.9rem;
+    color: var(--muted);
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  .method-tag {
+    display: inline-block;
+    margin-top: 1rem;
+    background: rgba(0,229,200,0.1);
+    border: 1px solid rgba(0,229,200,0.25);
+    color: var(--accent2);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    padding: 0.2rem 0.6rem;
+    border-radius: 2px;
+    font-family: var(--font-head);
+  }
+
+  /* ── STEPS ── */
+  .steps-section { background: var(--surface); }
+
+  .steps-list { counter-reset: step; display: flex; flex-direction: column; gap: 0; }
+
+  .step {
+    counter-increment: step;
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 0;
+    border-bottom: 1px solid var(--border);
+    padding: 2rem 0;
+    align-items: start;
+    transition: background 0.2s;
+  }
+
+  .step:hover { padding-left: 1rem; }
+
+  .step-num {
+    font-family: var(--font-head);
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--border);
+    line-height: 1;
+    padding-top: 0.25rem;
+  }
+
+  .step-content h3 {
+    font-family: var(--font-head);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+    color: var(--text);
+  }
+
+  .step-content p {
+    font-size: 0.88rem;
+    color: var(--muted);
+    font-weight: 300;
+    max-width: 600px;
+  }
+
+  .step-content .links {
+    margin-top: 0.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .link-pill {
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--accent2);
+    font-size: 0.75rem;
+    padding: 0.25rem 0.7rem;
+    border-radius: 2px;
+    text-decoration: none;
+    font-family: var(--font-head);
+    letter-spacing: 0.05em;
+    transition: border-color 0.2s;
+  }
+  .link-pill:hover { border-color: var(--accent2); }
+
+  /* ── PROGRAMS TABLE ── */
+  .programs-section {}
+
+  .programs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .prog-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1.5rem;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .prog-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+
+  .prog-name {
+    font-family: var(--font-head);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.25rem;
+  }
+
+  .prog-type {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    color: var(--accent2);
+    font-family: var(--font-head);
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+  }
+
+  .prog-detail {
+    font-size: 0.82rem;
+    color: var(--muted);
+    font-weight: 300;
+    line-height: 1.5;
+  }
+
+  .prog-earn {
+    margin-top: 0.75rem;
+    font-family: var(--font-head);
+    font-size: 0.8rem;
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  /* ── HOSTING TABLE ── */
+  .hosting-section { background: var(--surface); }
+
+  .table-wrap { overflow-x: auto; margin-top: 2rem; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+
+  thead tr { border-bottom: 2px solid var(--accent); }
+
+  th {
+    font-family: var(--font-head);
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 0.75rem 1rem;
+    text-align: left;
+  }
+
+  td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--muted);
+    font-weight: 300;
+    vertical-align: top;
+  }
+
+  td:first-child {
+    font-family: var(--font-head);
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .yes { color: var(--accent); font-weight: 700; }
+  .no { color: #ff5555; }
+
+  /* ── SEO TIPS ── */
+  .seo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .seo-card {
+    border-left: 2px solid var(--accent);
+    padding-left: 1.25rem;
+  }
+
+  .seo-card h4 {
+    font-family: var(--font-head);
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+  }
+
+  .seo-card p {
+    font-size: 0.82rem;
+    color: var(--muted);
+    font-weight: 300;
+    line-height: 1.55;
+  }
+
+  /* ── CTA BANNER ── */
+  .cta-banner {
+    background: var(--accent);
+    color: #0a0a0a;
+    text-align: center;
+    padding: 4rem 2rem;
+  }
+
+  .cta-banner h2 {
+    font-family: var(--font-head);
+    font-size: clamp(1.8rem, 5vw, 3.5rem);
+    font-weight: 800;
+    color: #0a0a0a;
+    margin-bottom: 0.5rem;
+  }
+
+  .cta-banner p {
+    font-size: 1rem;
+    color: rgba(0,0,0,0.6);
+    margin-bottom: 2rem;
+    font-weight: 300;
+  }
+
+  .btn-dark {
+    background: #0a0a0a;
+    color: var(--accent);
+    font-family: var(--font-head);
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 0.9rem 2.5rem;
+    border: none;
+    border-radius: 3px;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.2s;
+  }
+  .btn-dark:hover { transform: translateY(-2px); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #050505;
+    border-top: 1px solid var(--border);
+    padding: 2rem;
+    text-align: center;
+    font-size: 0.78rem;
+    color: var(--muted);
+    font-weight: 300;
+  }
+
+  footer strong { color: var(--accent); font-family: var(--font-head); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  /* ── DIVIDER ── */
+  .divider {
+    width: 48px;
+    height: 2px;
+    background: var(--accent);
+    margin-bottom: 2rem;
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    .step { grid-template-columns: 50px 1fr; }
+    .step-num { font-size: 1.8rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════ HERO ═══════════════════════════════════ -->
+<section class="hero">
+  <div class="container">
+    <div class="badge">Free Guide · Zero Fluff</div>
+    <h1>Turn your<br><span class="accent">screen time</span><br>into <span class="accent2">real money.</span></h1>
+    <p class="hero-sub">A practical, no-hype breakdown of the fastest ways to earn extra income online — from your phone, tablet, or laptop. No experience required.</p>
+    <div class="hero-cta">
+      <a href="#methods" class="btn btn-primary">See How It Works</a>
+      <a href="#start" class="btn btn-ghost">Start in 7 Steps →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ TICKER ═══════════════════════════════════ -->
+<div class="ticker-wrap" aria-hidden="true">
+  <div class="ticker">
+    <span>AFFILIATE MARKETING</span><span>•</span>
+    <span>DISPLAY ADS</span><span>•</span>
+    <span>SPONSORED CONTENT</span><span>•</span>
+    <span>DIGITAL PRODUCTS</span><span>•</span>
+    <span>EMAIL LIST INCOME</span><span>•</span>
+    <span>PAY-PER-CLICK</span><span>•</span>
+    <span>FREE HOSTING</span><span>•</span>
+    <span>PASSIVE INCOME</span><span>•</span>
+    <!-- duplicate for seamless loop -->
+    <span>AFFILIATE MARKETING</span><span>•</span>
+    <span>DISPLAY ADS</span><span>•</span>
+    <span>SPONSORED CONTENT</span><span>•</span>
+    <span>DIGITAL PRODUCTS</span><span>•</span>
+    <span>EMAIL LIST INCOME</span><span>•</span>
+    <span>PAY-PER-CLICK</span><span>•</span>
+    <span>FREE HOSTING</span><span>•</span>
+    <span>PASSIVE INCOME</span><span>•</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ METHODS ═══════════════════════════════════ -->
+<section id="methods">
+  <div class="container">
+    <p class="section-label">The Methods</p>
+    <h2>5 Ways to Earn<br>From Any Device</h2>
+    <p class="section-intro">Each method below can be started for free. Pick one, master it, then layer the others on top.</p>
+
+    <div class="methods-grid">
+
+      <div class="method-card">
+        <p class="method-num">01</p>
+        <h3>Affiliate Marketing</h3>
+        <p>Share a special link to someone else's product. When someone clicks and buys, you earn a commission — typically 5% to 50%. No product, no stock, no shipping. Just your link.</p>
+        <span class="method-tag">Best for beginners</span>
+      </div>
+
+      <div class="method-card">
+        <p class="method-num">02</p>
+        <h3>Display Advertising</h3>
+        <p>Place ads on your website or blog. Ad networks like Google AdSense or Ezoic pay you every time a visitor sees or clicks an ad. The more traffic, the more you earn — automatically.</p>
+        <span class="method-tag">100% passive</span>
+      </div>
+
+      <div class="method-card">
+        <p class="method-num">03</p>
+        <h3>Sponsored Content</h3>
+        <p>Once you have an audience, brands pay you to write or post about their products. Rates range from R500 to R50,000+ per post depending on your reach.</p>
+        <span class="method-tag">High earning potential</span>
+      </div>
+
+      <div class="method-card">
+        <p class="method-num">04</p>
+        <h3>Digital Products</h3>
+        <p>Sell an e-book, template, checklist, or mini-course once — and get paid hundreds of times. Create it once with tools like Canva or Google Docs and sell via Gumroad or Payhip.</p>
+        <span class="method-tag">Scales infinitely</span>
+      </div>
+
+      <div class="method-card">
+        <p class="method-num">05</p>
+        <h3>Email List Monetisation</h3>
+        <p>Build a free newsletter. Send helpful content. Include affiliate links or promote your own products. An email list is an asset you own — no algorithm can take it from you.</p>
+        <span class="method-tag">Long-term asset</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ 7 STEPS ═══════════════════════════════════ -->
+<section class="steps-section" id="start">
+  <div class="container">
+    <p class="section-label">The Roadmap</p>
+    <h2>Your 7-Step<br>Launch Plan</h2>
+    <p class="section-intro">Follow these steps in order. Each one takes under an hour.</p>
+    <div class="divider"></div>
+
+    <ol class="steps-list">
+
+      <li class="step">
+        <div class="step-num">01</div>
+        <div class="step-content">
+          <h3>Pick Your Niche</h3>
+          <p>Choose one topic you know or enjoy — cooking, fitness, finance, tech, parenting. Narrow is better. "Budget cooking for students" beats "food" every time. Google rewards specificity.</p>
+        </div>
+      </li>
+
+      <li class="step">
+        <div class="step-num">02</div>
+        <div class="step-content">
+          <h3>Set Up Free Hosting</h3>
+          <p>Launch your site on a free platform. No coding required. Cloudflare Pages, GitHub Pages, and Netlify all offer free static hosting. For a blog-style site, use Blogger (Google) or WordPress.com free tier.</p>
+          <div class="links">
+            <a href="https://pages.cloudflare.com" target="_blank" rel="noopener" class="link-pill">Cloudflare Pages</a>
+            <a href="https://pages.github.com" target="_blank" rel="noopener" class="link-pill">GitHub Pages</a>
+            <a href="https://netlify.com" target="_blank" rel="noopener" class="link-pill">Netlify</a>
+            <a href="https://blogger.com" target="_blank" rel="noopener" class="link-pill">Blogger</a>
+          </div>
+        </div>
+      </li>
+
+      <li class="step">
+        <div class="step-num">03</div>
+        <div class="step-content">
+          <h3>Get a Free Domain (or Use a Subdomain)</h3>
+          <p>Use a free subdomain (yoursite.netlify.app) to start. When ready, upgrade to a paid .com domain (~R150/year via Afrihost or Namecheap). A custom domain builds trust and helps SEO.</p>
+          <div class="links">
+            <a href="https://afrihost.com" target="_blank" rel="noopener" class="link-pill">Afrihost</a>
+            <a href="https://namecheap.com" target="_blank" rel="noopener" class="link-pill">Namecheap</a>
+            <a href="https://freenom.com" target="_blank" rel="noopener" class="link-pill">Freenom (free domains)</a>
+          </div>
+        </div>
+      </li>
+
+      <li class="step">
+        <div class="step-num">04</div>
+        <div class="step-content">
+          <h3>Apply for Ad Networks &amp; Affiliate Programs</h3>
+          <p>Sign up for Google AdSense (display ads) and 1–2 affiliate programs relevant to your niche. Place your affiliate links naturally in your content. You earn whether you're awake or asleep.</p>
+          <div class="links">
+            <a href="https://adsense.google.com" target="_blank" rel="noopener" class="link-pill">Google AdSense</a>
+            <a href="https://ezoic.com" target="_blank" rel="noopener" class="link-pill">Ezoic</a>
+            <a href="https://amazon.com/associates" target="_blank" rel="noopener" class="link-pill">Amazon Associates</a>
+            <a href="https://shareasale.com" target="_blank" rel="noopener" class="link-pill">ShareASale</a>
+          </div>
+        </div>
+      </li>
+
+      <li class="step">
+        <div class="step-num">05</div>
+        <div class="step-content">
+          <h3>Link to a Payment Platform</h3>
+          <p>Connect PayPal, Payoneer, or a local SA option to receive your earnings. Most affiliate networks and ad platforms support these. Payoneer works well for South African creators receiving USD.</p>
+          <div class="links">
+            <a href="https://paypal.com" target="_blank" rel="noopener" class="link-pill">PayPal</a>
+            <a href="https://payoneer.com" target="_blank" rel="noopener" class="link-pill">Payoneer</a>
+            <a href="https://yoco.com/za" target="_blank" rel="noopener" class="link-pill">Yoco (SA)</a>
+            <a href="https://peach-payments.com" target="_blank" rel="noopener" class="link-pill">Peach Payments (SA)</a>
+          </div>
+        </div>
+      </li>
+
+      <li class="step">
+        <div class="step-num">06</div>
+        <div class="step-content">
+          <h3>Optimise for Google (SEO Basics)</h3>
+          <p>Write helpful, specific content. Use your niche keywords in headings and the first paragraph. Submit your site to Google Search Console (free). Add a sitemap. Speed = ranking. Fast pages win.</p>
+          <div class="links">
+            <a href="https://search.google.com/search-console" target="_blank" rel="noopener" class="link-pill">Google Search Console</a>
+            <a href="https://pagespeed.web.dev" target="_blank" rel="noopener" class="link-pill">PageSpeed Insights</a>
+          </div>
+        </div>
+      </li>
+
+      <li class="step">
+        <div class="step-num">07</div>
+        <div class="step-content">
+          <h3>Drive Free Traffic</h3>
+          <p>Share content on Pinterest (massive traffic driver), Reddit, Facebook Groups, and WhatsApp communities. Post consistently — 2x per week minimum. Traffic = income. No traffic = no income.</p>
+          <div class="links">
+            <a href="https://pinterest.com" target="_blank" rel="noopener" class="link-pill">Pinterest</a>
+            <a href="https://reddit.com" target="_blank" rel="noopener" class="link-pill">Reddit</a>
+          </div>
+        </div>
+      </li>
+
+    </ol>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ PROGRAMS ═══════════════════════════════════ -->
+<section class="programs-section" id="programs">
+  <div class="container">
+    <p class="section-label">Recommended Partners</p>
+    <h2>Top Affiliate &amp; Ad<br>Programs to Join</h2>
+    <p class="section-intro">These pay reliably and accept beginners. Start with 2–3 that match your niche.</p>
+
+    <div class="programs-grid">
+
+      <div class="prog-card">
+        <p class="prog-name">Amazon Associates</p>
+        <p class="prog-type">Affiliate · Products</p>
+        <p class="prog-detail">Promote any product on Amazon. Millions of options across every niche. Easy to link and trusted by buyers globally.</p>
+        <p class="prog-earn">3%–10% commission</p>
+      </div>
+
+      <div class="prog-card">
+        <p class="prog-name">Google AdSense</p>
+        <p class="prog-type">Display Ads</p>
+        <p class="prog-detail">The most popular ad network. Paste one code snippet, Google places relevant ads automatically. Paid per click.</p>
+        <p class="prog-earn">R2–R80 per click</p>
+      </div>
+
+      <div class="prog-card">
+        <p class="prog-name">Takealot Affiliate</p>
+        <p class="prog-type">Affiliate · SA Focus</p>
+        <p class="prog-detail">South Africa's biggest online store. Ideal for local audiences. Apply via their website affiliate portal.</p>
+        <p class="prog-earn">2%–5% commission</p>
+      </div>
+
+      <div class="prog-card">
+        <p class="prog-name">Hostinger / Namecheap</p>
+        <p class="prog-type">Affiliate · Hosting</p>
+        <p class="prog-detail">Refer people to web hosting. High commissions because hosting is recurring. Great if you write about websites or online business.</p>
+        <p class="prog-earn">Up to 60% commission</p>
+      </div>
+
+      <div class="prog-card">
+        <p class="prog-name">ShareASale</p>
+        <p class="prog-type">Affiliate Network</p>
+        <p class="prog-detail">A marketplace of 4,000+ affiliate programs. One account, many brands. Fashion, finance, tech, food — all covered.</p>
+        <p class="prog-earn">Varies by merchant</p>
+      </div>
+
+      <div class="prog-card">
+        <p class="prog-name">Ezoic</p>
+        <p class="prog-type">Ad Network · Premium</p>
+        <p class="prog-detail">Higher payouts than basic AdSense. Uses AI to optimise ad placement. Available once you hit ~10,000 monthly visitors.</p>
+        <p class="prog-earn">3×–5× AdSense rates</p>
+      </div>
+
+      <div class="prog-card">
+        <p class="prog-name">ClickBank</p>
+        <p class="prog-type">Affiliate · Digital Products</p>
+        <p class="prog-detail">Huge marketplace of digital products — e-books, courses, software. High commissions common in health and finance niches.</p>
+        <p class="prog-earn">25%–75% commission</p>
+      </div>
+
+      <div class="prog-card">
+        <p class="prog-name">Gumroad</p>
+        <p class="prog-type">Sell Your Own Products</p>
+        <p class="prog-detail">Create and sell your own digital products — guides, templates, presets. Keep up to 91% of each sale. Free to start.</p>
+        <p class="prog-earn">You set the price</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ HOSTING TABLE ═══════════════════════════════════ -->
+<section class="hosting-section" id="hosting">
+  <div class="container">
+    <p class="section-label">Free Hosting Options</p>
+    <h2>Where to Host<br>Your Site for Free</h2>
+    <p class="section-intro">All options below are genuinely free. No credit card needed to start.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Platform</th>
+            <th>Best For</th>
+            <th>Custom Domain</th>
+            <th>SEO Friendly</th>
+            <th>Free Forever</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Cloudflare Pages</td>
+            <td>HTML / static sites, fastest globally</td>
+            <td class="yes">✓ Yes</td>
+            <td class="yes">✓ Excellent</td>
+            <td class="yes">✓ Yes</td>
+          </tr>
+          <tr>
+            <td>GitHub Pages</td>
+            <td>Developers, portfolio sites</td>
+            <td class="yes">✓ Yes</td>
+            <td class="yes">✓ Very good</td>
+            <td class="yes">✓ Yes</td>
+          </tr>
+          <tr>
+            <td>Netlify</td>
+            <td>Simple sites, drag-and-drop deploy</td>
+            <td class="yes">✓ Yes</td>
+            <td class="yes">✓ Very good</td>
+            <td class="yes">✓ Yes</td>
+          </tr>
+          <tr>
+            <td>Blogger</td>
+            <td>Bloggers, AdSense-ready out of the box</td>
+            <td class="yes">✓ Yes</td>
+            <td class="yes">✓ Good</td>
+            <td class="yes">✓ Yes (Google)</td>
+          </tr>
+          <tr>
+            <td>WordPress.com (free)</td>
+            <td>Content-heavy blogs</td>
+            <td class="no">✗ Paid plans</td>
+            <td class="yes">✓ Good</td>
+            <td class="yes">✓ Basic tier</td>
+          </tr>
+          <tr>
+            <td>Tiiny.host</td>
+            <td>Upload a single HTML file instantly</td>
+            <td class="no">✗ Limited</td>
+            <td>Moderate</td>
+            <td class="yes">✓ Yes</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ SEO ═══════════════════════════════════ -->
+<section id="seo">
+  <div class="container">
+    <p class="section-label">Stay on Top of Google</p>
+    <h2>SEO Tips That<br>Actually Work</h2>
+    <p class="section-intro">You don't need to be a tech expert. These basics handle 80% of your ranking.</p>
+
+    <div class="seo-grid">
+
+      <div class="seo-card">
+        <h4>Use Specific Keywords</h4>
+        <p>Target phrases like "best budget blender under R500" not just "blenders". Specific = less competition = easier to rank.</p>
+      </div>
+
+      <div class="seo-card">
+        <h4>Fast Load Speed</h4>
+        <p>Google penalises slow sites. Cloudflare Pages is one of the fastest free options globally. Test your speed at pagespeed.web.dev.</p>
+      </div>
+
+      <div class="seo-card">
+        <h4>Submit to Search Console</h4>
+        <p>Register your site at Google Search Console. Submit your sitemap. This tells Google your site exists and to index it.</p>
+      </div>
+
+      <div class="seo-card">
+        <h4>Write Helpful Content</h4>
+        <p>Google's algorithm rewards genuinely useful pages. Answer one specific question per page, better than anyone else online.</p>
+      </div>
+
+      <div class="seo-card">
+        <h4>Use Clear Headings</h4>
+        <p>Structure pages with H1, H2, H3 tags containing your keywords. This helps both humans and search engines understand your content.</p>
+      </div>
+
+      <div class="seo-card">
+        <h4>Mobile-First Design</h4>
+        <p>Over 60% of searches happen on phones. Your site must look great on small screens. Google ranks mobile performance first.</p>
+      </div>
+
+      <div class="seo-card">
+        <h4>Get Backlinks</h4>
+        <p>Ask related websites to link to your content. Each link is a "vote" for your site. Comment on forums, answer questions on Quora with your link.</p>
+      </div>
+
+      <div class="seo-card">
+        <h4>Post Consistently</h4>
+        <p>Fresh content signals an active site. Even one new page per week compounds dramatically over 6–12 months.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ CTA ═══════════════════════════════════ -->
+<div class="cta-banner">
+  <h2>Start today.<br>Not tomorrow.</h2>
+  <p>Every day you wait is a day someone else is earning from the same idea you have.</p>
+  <a href="#start" class="btn-dark">Follow the 7-Step Plan →</a>
+</div>
+
+<!-- ═══════════════════════════════════ SISTER PAGE ═══════════════════════════════════ -->
+<div style="background:#141414; border-top:2px solid #c8f000; border-bottom:2px solid #c8f000; padding:3rem 2rem;">
+  <div style="max-width:1100px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:2rem;">
+    <div>
+      <p style="font-family:'Syne',sans-serif; font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:#c8f000; margin-bottom:0.5rem;">Also on this network</p>
+      <p style="font-family:'Syne',sans-serif; font-size:1.5rem; font-weight:800; color:#f0f0f0; letter-spacing:-0.02em; margin-bottom:0.4rem;">AI<span style="color:#c8f000;">Paycheck</span></p>
+      <p style="font-size:0.88rem; color:#888; font-weight:300; max-width:480px;">The hottest topic online right now: how ordinary people are using <em>free AI tools</em> to earn real money — from copywriting to faceless YouTube to selling digital products.</p>
+    </div>
+    <a href="ai-income.html" style="display:inline-block; background:#c8f000; color:#0a0a0a; font-family:'Syne',sans-serif; font-size:0.88rem; font-weight:700; letter-spacing:0.05em; padding:1rem 2.5rem; text-decoration:none; white-space:nowrap; transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">Read the AI Income Guide →</a>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ FOOTER ═══════════════════════════════════ -->
+<footer>
+  <p><strong>NetIncome</strong> — A free guide to earning online.</p>
+  <p style="margin-top:0.5rem;">Links to third-party services are for reference. Always review each platform's own terms before signing up. This site may earn affiliate commissions.</p>
+</footer>
+
+</body>
+</html>
